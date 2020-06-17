@@ -6,10 +6,10 @@ import {
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create<NestFastifyApplication>(
+  const app = await NestFactory.create<any>(
     AppModule,
     new FastifyAdapter(),
   );
-  await app.listen(parseInt(process.env.PORT) || 4000);
+  await app.listen(process.env.PORT || 4000);
 }
 bootstrap();
